@@ -1,0 +1,29 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Título</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+        <th>Correo</th>
+        <th>Nivel de Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let restaurant of restaurants">
+        <td>{{ restaurant.id }}</td>
+        <td>{{ restaurant.title }}</td>
+        <td>{{ restaurant.address }}</td>
+        <td>{{ restaurant.phone }}</td>
+        <td>{{ restaurant.email }}</td>
+        <td>{{ restaurant.priceLevel }}</td>
+        <td>
+          <button [routerLink]="['/restaurant', restaurant.id]" class="btn btn-info">Detalles</button>
+          <button [routerLink]="['/restaurant/edit', restaurant.id]" class="btn btn-warning">Editar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button [routerLink]="['/restaurant/new']" class="btn btn-primary">Nuevo Restaurante</button>
+  
